@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TekinLabs · Mikro Araçlar</title>
+    <meta name="description" content="Günlük iş akışını hızlandıran, kurulum gerektirmeyen minimalist mikro araçlar.">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #1e293b;
+        }
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: -0.05em;
+            margin: 0.5rem 0;
+        }
+        h1 span {
+            background: #e6f0ff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 400;
+            vertical-align: middle;
+            margin-left: 0.5rem;
+            color: #2563eb;
+        }
+        .tagline {
+            font-size: 1.3rem;
+            color: #475569;
+            border-left: 4px solid #2563eb;
+            padding-left: 1rem;
+            text-align: left;
+            margin: 2rem 0;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2.5rem 0;
+        }
+        .tool-card {
+            background: white;
+            padding: 1.5rem 1rem;
+            border-radius: 32px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        .tool-card:hover {
+            border-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(37,99,235,0.1);
+        }
+        .tool-card h3 {
+            margin: 0 0 0.25rem 0;
+            font-weight: 600;
+        }
+        .tool-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        .feedback {
+            margin-top: 3rem;
+            padding: 2rem 1rem;
+            background: #ffffffcc;
+            border-radius: 48px;
+        }
+        .feedback input {
+            padding: 0.8rem 1.2rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 60px;
+            width: 60%;
+            font-size: 1rem;
+        }
+        .feedback button {
+            padding: 0.8rem 1.8rem;
+            background: #0f172a;
+            color: white;
+            border: none;
+            border-radius: 60px;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+            cursor: pointer;
+        }
+        footer {
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TekinLabs <span>βeta</span></h1>
+        <div class="tagline">
+            İşini hızlandıracak küçük dijital asistanlar.<br>
+            Kurulum yok, sadece çözüm.
+        </div>
+
+        <div class="tools-grid">
+            <a href="#" class="tool-card">
+                <h3>📝 LinkedIn Format</h3>
+                <p>Yazılarını kalın, italik, madde işareti ile yaz</p>
+            </a>
+            <a href="#" class="tool-card">
+                <h3>⏲️ Focus Timer</h3>
+                <p>25 dakika çalış, 5 dinlen (Pomodoro)</p>
+            </a>
+            <a href="#" class="tool-card">
+                <h3>🌍 Saat Farkı</h3>
+                <p>Türkiye – Almanya saatini yan yana gör</p>
+            </a>
+            <a href="#" class="tool-card">
+                <h3>📋 Kısalt</h3>
+                <p>Uzun metinleri kısalt, temizle</p>
+            </a>
+        </div>
+
+        <div class="feedback">
+            <h3>🔧 Sıradaki araç ne olsun?</h3>
+            <input type="text" placeholder="Örneğin: PDF birleştirici, QR kod..." />
+            <button>Gönder</button>
+            <p style="font-size:0.8rem; margin-top:1rem;">İsteğin doğrudan bana ulaşır, en çok isteneni yaparım.</p>
+        </div>
+
+        <footer>
+            TekinLabs © 2025 · Mikro araçlar, büyük kolaylıklar.
+        </footer>
+    </div>
+</body>
+</html>
