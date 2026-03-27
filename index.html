@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TekinLabs | Micro-Tools Laboratory</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #f8fafc;
             --text-color: #1e293b;
             --accent-color: #0ea5e9;
-            --card-bg: #ffffff;
+            --logo-navy: #1e293b;
+            --logo-orange: #ea580c;
+            --logo-yellow: #f59e0b;
         }
 
         body {
@@ -27,6 +29,7 @@
             padding: 20px;
         }
 
+        /* Dil Seçici */
         .lang-switcher {
             position: absolute;
             top: 20px;
@@ -46,18 +49,16 @@
 
         .lang-btn:hover { background: #e2e8f0; }
 
-        .container { max-width: 600px; }
+        .container { max-width: 600px; display: flex; flex-direction: column; align-items: center; }
 
-        .logo {
-            font-family: 'JetBrains+Mono', monospace;
-            font-weight: 600;
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            letter-spacing: -1px;
+        /* SVG Logo Konteyneri */
+        .tekinlabs-logo {
+            width: 100px;  /* Genişlik ayarı */
+            height: auto;
+            margin-bottom: 20px;
         }
 
-        h1 { font-weight: 600; margin-bottom: 20px; }
+        h1 { font-weight: 600; margin-bottom: 20px; font-size: 1.8rem; color: var(--logo-navy); }
 
         p { line-height: 1.6; color: #64748b; font-size: 1.1rem; }
 
@@ -93,7 +94,22 @@
     </div>
 
     <div class="container">
-        <div class="logo">🔬 TekinLabs</div>
+        <svg class="tekinlabs-logo" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40 30v20c-5 2-10 10-10 18s5 15 10 18s10 3 10 3s5-3 10-18s10-16 10-18s-5-16-10-18V30h-10z" stroke="var(--logo-navy)" stroke-width="3" fill="none"/>
+            <rect x="40" y="27" width="20" height="3" fill="var(--logo-navy)" rx="1"/>
+            
+            <path d="M40 55c0 0-4 4-8 10s-2 10 0 13s8 8 13 8s13-5 15-8s2-7 0-13s-8-10-8-10H40z" fill="var(--logo-orange)"/>
+            
+            <circle cx="48" cy="65" r="2" fill="white" opacity="0.6"/>
+            <circle cx="55" cy="72" r="1.5" fill="white" opacity="0.4"/>
+
+            <path d="M48 22a4 4 0 1 1 0 0.01z" fill="var(--logo-yellow)"/> <path d="M55 18l2 2-2 2h-2z" fill="var(--logo-orange)"/> <line x1="20" y1="90" x2="80" y2="90" stroke="#ddd" stroke-width="1"/>
+
+            <path d="M40 92v10c-5-2-10-10-10-18s5-15 10-18s10-3 10-3s5 3 10 18s10 16 10 18s-5 16-10 18v10h-10z" stroke="var(--logo-navy)" stroke-width="1.5" fill="none" opacity="0.2"/>
+            
+            <path d="M50 90c8 0 15 7 15 15s-7 15-15 15s-15-7-15-15s7-15 15-15z" fill="var(--logo-yellow)" opacity="0.9"/>
+            <path d="M50 115v-10h-3v3zM47 115l2 2-2 2z" fill="var(--logo-navy)"/> </svg>
+
         <div class="badge" data-i18n="status">Yapım Aşamasında</div>
         
         <h1 data-i18n="welcome_title">Laboratuvara Hoş Geldiniz!</h1>
@@ -155,7 +171,6 @@
             document.documentElement.lang = lang;
         }
 
-        // Sayfa yüklendiğinde varsayılan dil (opsiyonel olarak tarayıcı diline göre ayarlanabilir)
         window.onload = () => changeLang('tr');
     </script>
 </body>
