@@ -3,147 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TekinLabs · Mikro Araçlar</title>
-    <meta name="description" content="Günlük iş akışını hızlandıran, kurulum gerektirmeyen minimalist mikro araçlar.">
+    <title>TekinLabs | Micro-Tools Laboratory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --accent-color: #0ea5e9;
+            --card-bg: #ffffff;
+        }
+
         body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-            background: #f4f7fb;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
-            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            color: #1e293b;
-        }
-        .container {
-            max-width: 600px;
-            padding: 2rem;
             text-align: center;
+            padding: 20px;
         }
-        h1 {
-            font-size: 3rem;
-            font-weight: 500;
-            letter-spacing: -0.05em;
-            margin: 0.5rem 0;
+
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
-        h1 span {
-            background: #e6f0ff;
-            padding: 0.2rem 0.8rem;
-            border-radius: 60px;
-            font-size: 1rem;
-            font-weight: 400;
-            vertical-align: middle;
-            margin-left: 0.5rem;
-            color: #2563eb;
-        }
-        .tagline {
-            font-size: 1.3rem;
-            color: #475569;
-            border-left: 4px solid #2563eb;
-            padding-left: 1rem;
-            text-align: left;
-            margin: 2rem 0;
-        }
-        .tools-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 2.5rem 0;
-        }
-        .tool-card {
-            background: white;
-            padding: 1.5rem 1rem;
-            border-radius: 32px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-            text-decoration: none;
-            color: inherit;
-            border: 1px solid #e2e8f0;
-            transition: all 0.2s;
-        }
-        .tool-card:hover {
-            border-color: #2563eb;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(37,99,235,0.1);
-        }
-        .tool-card h3 {
-            margin: 0 0 0.25rem 0;
-            font-weight: 600;
-        }
-        .tool-card p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: #64748b;
-        }
-        .feedback {
-            margin-top: 3rem;
-            padding: 2rem 1rem;
-            background: #ffffffcc;
-            border-radius: 48px;
-        }
-        .feedback input {
-            padding: 0.8rem 1.2rem;
+
+        .lang-btn {
+            background: none;
             border: 1px solid #cbd5e1;
-            border-radius: 60px;
-            width: 60%;
-            font-size: 1rem;
-        }
-        .feedback button {
-            padding: 0.8rem 1.8rem;
-            background: #0f172a;
-            color: white;
-            border: none;
-            border-radius: 60px;
-            font-size: 1rem;
-            margin-left: 0.5rem;
+            padding: 5px 10px;
             cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-left: 5px;
+            transition: 0.3s;
         }
-        footer {
-            margin-top: 4rem;
-            font-size: 0.9rem;
-            color: #94a3b8;
+
+        .lang-btn:hover { background: #e2e8f0; }
+
+        .container { max-width: 600px; }
+
+        .logo {
+            font-family: 'JetBrains+Mono', monospace;
+            font-weight: 600;
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            letter-spacing: -1px;
         }
+
+        h1 { font-weight: 600; margin-bottom: 20px; }
+
+        p { line-height: 1.6; color: #64748b; font-size: 1.1rem; }
+
+        .badge {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 0.85rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
+            width: 100%;
+        }
+
+        .contact-link { color: var(--accent-color); text-decoration: none; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>TekinLabs <span>βeta</span></h1>
-        <div class="tagline">
-            İşini hızlandıracak küçük dijital asistanlar.<br>
-            Kurulum yok, sadece çözüm.
-        </div>
 
-        <div class="tools-grid">
-            <a href="#" class="tool-card">
-                <h3>📝 LinkedIn Format</h3>
-                <p>Yazılarını kalın, italik, madde işareti ile yaz</p>
-            </a>
-            <a href="#" class="tool-card">
-                <h3>⏲️ Focus Timer</h3>
-                <p>25 dakika çalış, 5 dinlen (Pomodoro)</p>
-            </a>
-            <a href="#" class="tool-card">
-                <h3>🌍 Saat Farkı</h3>
-                <p>Türkiye – Almanya saatini yan yana gör</p>
-            </a>
-            <a href="#" class="tool-card">
-                <h3>📋 Kısalt</h3>
-                <p>Uzun metinleri kısalt, temizle</p>
-            </a>
-        </div>
-
-        <div class="feedback">
-            <h3>🔧 Sıradaki araç ne olsun?</h3>
-            <input type="text" placeholder="Örneğin: PDF birleştirici, QR kod..." />
-            <button>Gönder</button>
-            <p style="font-size:0.8rem; margin-top:1rem;">İsteğin doğrudan bana ulaşır, en çok isteneni yaparım.</p>
-        </div>
-
-        <footer>
-            TekinLabs © 2025 · Mikro araçlar, büyük kolaylıklar.
-        </footer>
+    <div class="lang-switcher">
+        <button class="lang-btn" onclick="changeLang('tr')">TR</button>
+        <button class="lang-btn" onclick="changeLang('de')">DE</button>
+        <button class="lang-btn" onclick="changeLang('en')">EN</button>
     </div>
+
+    <div class="container">
+        <div class="logo">🔬 TekinLabs</div>
+        <div class="badge" data-i18n="status">Yapım Aşamasında</div>
+        
+        <h1 data-i18n="welcome_title">Laboratuvara Hoş Geldiniz!</h1>
+        
+        <p data-i18n="main_message">
+            Şu an içeride hummalı bir çalışma var. Sizlere günlük iş akışınızı kolaylaştıracak en verimli mikro-araçları sunmak için kodları optimize ediyoruz. Çok yakında burada olacağız!
+        </p>
+
+        <p>
+            <strong data-i18n="coming_soon_tools">Yakında Gelecek Araçlar:</strong><br>
+            LinkedIn Formatter • Team Map • Focus Timer • TR-DE Time Zone
+        </p>
+    </div>
+
+    <footer class="footer">
+        <p>
+            <span data-i18n="contact_text">İş birliği ve önerileriniz için:</span> 
+            <a href="mailto:tekinlabs@gmail.com" class="contact-link">tekinlabs@gmail.com</a>
+        </p>
+        <p>© 2026 Onur Tekin | TekinLabs</p>
+        <p style="font-size: 0.7rem; color: #94a3b8;" data-i18n="privacy_note">
+            Gizlilik Taahhüdü: Tüm araçlarımız verilerinizi sadece tarayıcınızda işler.
+        </p>
+    </footer>
+
+    <script>
+        const translations = {
+            tr: {
+                status: "Yapım Aşamasında",
+                welcome_title: "Laboratuvara Hoş Geldiniz!",
+                main_message: "Şu an içeride hummalı bir çalışma var. Sizlere günlük iş akışınızı kolaylaştıracak en verimli mikro-araçları sunmak için kodları optimize ediyoruz. Çok yakında burada olacağız!",
+                coming_soon_tools: "Yakında Gelecek Araçlar:",
+                contact_text: "İş birliği ve önerileriniz için:",
+                privacy_note: "Gizlilik Taahhüdü: Tüm araçlarımız verilerinizi sadece tarayıcınızda işler."
+            },
+            de: {
+                status: "In Arbeit",
+                welcome_title: "Willkommen im Labor!",
+                main_message: "Wir arbeiten derzeit intensiv im Hintergrund. Wir optimieren die Codes, um Ihnen die effizientesten Mikro-Tools zur Erleichterung Ihres täglichen Workflows anzubieten. Wir sind bald für Sie da!",
+                coming_soon_tools: "Demnächst verfügbare Tools:",
+                contact_text: "Für Zusammenarbeit und Vorschläge:",
+                privacy_note: "Datenschutz: Alle unsere Tools verarbeiten Ihre Daten ausschließlich in Ihrem Browser."
+            },
+            en: {
+                status: "Under Construction",
+                welcome_title: "Welcome to the Lab!",
+                main_message: "Work is currently underway. We are optimizing the code to provide you with the most efficient micro-tools to simplify your daily workflow. We'll be here very soon!",
+                coming_soon_tools: "Upcoming Tools:",
+                contact_text: "For collaborations and suggestions:",
+                privacy_note: "Privacy Commitment: All our tools process your data locally in your browser."
+            }
+        };
+
+        function changeLang(lang) {
+            document.querySelectorAll("[data-i18n]").forEach(el => {
+                const key = el.getAttribute("data-i18n");
+                el.innerText = translations[lang][key];
+            });
+            document.documentElement.lang = lang;
+        }
+
+        // Sayfa yüklendiğinde varsayılan dil (opsiyonel olarak tarayıcı diline göre ayarlanabilir)
+        window.onload = () => changeLang('tr');
+    </script>
 </body>
 </html>
