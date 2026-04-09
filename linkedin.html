@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Formatter | TekinLabs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f8fafc; margin: 0; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+        .back-nav { width: 100%; max-width: 700px; margin-bottom: 20px; }
+        .back-nav a { text-decoration: none; color: #0ea5e9; font-weight: 600; font-size: 0.9rem; }
+        .card { background: white; width: 100%; max-width: 700px; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); box-sizing: border-box; }
+        textarea { width: 100%; height: 180px; padding: 15px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; margin: 20px 0; box-sizing: border-box; outline: none; transition: 0.3s; }
+        textarea:focus { border-color: #0ea5e9; }
+        .btn-group { display: flex; gap: 10px; margin-bottom: 20px; }
+        .btn { flex: 1; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: 0.2s; }
+        .btn-dark { background: #1e293b; color: white; }
+        .btn-primary { background: #0ea5e9; color: white; width: 100%; margin-top: 10px; font-size: 1rem; }
+        .btn:hover { opacity: 0.9; transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+    <nav class="back-nav"><a href="index.html">← Laboratuvara Dön</a></nav>
+    <div class="card">
+        <h1 style="margin:0">LinkedIn Formatter</h1>
+        <p style="color:#64748b">Metninizi seçin ve stili uygulayın.</p>
+        <textarea id="input" placeholder="Yazınızı buraya yazın..."></textarea>
+        <div class="btn-group">
+            <button class="btn btn-dark" onclick="transform('bold')">KALIN</button>
+            <button class="btn btn-dark" onclick="transform('italic')">EĞİK</button>
+        </div>
+        <button class="btn btn-primary" id="copyBtn" onclick="copy()">KOPYALA</button>
+    </div>
 
+    <script>
+        const maps = {
+            bold: { 'a': '𝐚', 'b': '𝐛', 'c': '𝐜', 'd': '𝐝', 'e': '𝐞', 'f': '𝐟', 'g': '𝐠', 'h': '𝐡', 'i': '𝐢', 'j': '𝐣', 'k': '𝐤', 'l': '𝐥', 'm': '𝐦', 'n': '𝐧', 'o': '𝐨', 'p': '𝐩', 'q': '𝐪', 'r': '𝐫', 's': '𝐬', 't': '𝐭', 'u': '𝐮', 'v': '𝐯', 'w': '𝐰', 'x': '𝐱', 'y': '𝐲', 'z': '𝐳', 'A': '𝐀', 'B': '𝐁', 'C': '𝐂', 'D': '𝐃', 'E': '𝐄', 'F': '𝐅', 'G': '𝐆', 'H': '𝐇', 'I': '𝐈', 'J': '𝐉', 'K': '𝐊', 'L': '𝐋', 'M': '𝐌', 'N': '𝐍', 'O': '𝐎', 'P': '𝐏', 'Q': '𝐐', 'R': '𝐑', 'S': '𝐒', 'T': '𝐓', 'U': '𝐔', 'V': '𝐕', 'W': '𝐖', 'X': '𝐗', 'Y': '𝐘', 'Z': '𝐙' },
+            italic: { 'a': '𝘢', 'b': '𝘣', 'c': '𝘤', 'd': '𝘥', 'e': '𝘦', 'f': '𝘧', 'g': '𝘨', 'h': '𝘩', 'i': '𝘪', 'j': '𝘫', 'k': '𝘬', 'l': '𝘭', 'm': '𝘮', 'n': '𝘯', 'o': '𝘰', 'p': '𝘱', 'q': '𝘲', 'r': '𝘳', 's': '𝘴', 't': '𝘵', 'u': '𝘶', 'v': '𝘷', 'w': '𝘸', 'x': '𝘹', 'y': '𝘺', 'z': '𝘻', 'A': '𝘈', 'B': '𝘉', 'C': '𝘊', 'D': '𝘋', 'E': '𝘌', 'F': '𝘍', 'G': '𝘎', 'H': '𝘏', 'I': '𝘐', 'J': '𝘑', 'K': '𝘒', 'L': '𝘓', 'M': '𝘔', 'N': '𝘕', 'O': '𝘖', 'P': '𝘗', 'Q': '𝘘', 'R': '𝘙', 'S': '𝘚', 'T': '𝘛', 'U': '𝘜', 'V': '𝘝', 'W': '𝘞', 'X': '𝘟', 'Y': '𝘠', 'Z': '𝘡' }
+        };
+        const el = document.getElementById('input');
+        function transform(t) {
+            const s = el.selectionStart, e = el.selectionEnd, txt = el.value.substring(s, e);
+            if(!txt) return;
+            let res = ""; for(let c of txt) res += maps[t][c] || c;
+            el.value = el.value.substring(0, s) + res + el.value.substring(e);
+        }
+        function copy() {
+            el.select(); document.execCommand('copy');
+            const b = document.getElementById('copyBtn'); b.innerText = "KOPYALANDI!";
+            setTimeout(() => b.innerText = "KOPYALA", 2000);
+        }
+    </script>
+</body>
+</html>
