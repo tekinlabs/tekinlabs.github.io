@@ -1,44 +1,125 @@
-<div class="tool-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; width: 100%;">
-    
-    <a href="linkedin.html" class="tool-card active">
-        <div class="status-dot"></div>
-        <h3>🚀 LinkedIn Formatter</h3>
-        <p>İçeriklerinizi kalın ve eğik yazılarla öne çıkarın.</p>
-        <span class="btn-text">Hemen Kullan →</span>
-    </a>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TekinLabs | Micro-Tools Laboratory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --accent-color: #0ea5e9;
+            --border-color: #e2e8f0;
+        }
 
-    <a href="timer.html" class="tool-card pending">
-        <h3>⏳ Focus Timer</h3>
-        <p>Laboratuvar temalı Pomodoro sayacı.</p>
-        <span class="badge-small">Yakında</span>
-    </a>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
 
-    <a href="pdf-editor.html" class="tool-card pending">
-        <h3>📄 PDF Editor</h3>
-        <p>Hızlı ve güvenli PDF düzenleme araçları.</p>
-        <span class="badge-small">Yakında</span>
-    </a>
+        .header { text-align: center; margin-bottom: 50px; }
+        .logo { width: 120px; margin-bottom: 20px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
+        h1 { margin: 0; font-size: 2rem; color: #0f172a; }
+        .subtitle { color: #64748b; margin-top: 10px; }
 
-    </div>
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            width: 100%;
+        }
 
-<style>
-    .tool-grid { max-width: 900px; }
-    .tool-card {
-        background: white;
-        padding: 25px;
-        border-radius: 15px;
-        text-decoration: none;
-        color: #1e293b;
-        border: 2px solid transparent;
-        transition: 0.3s;
-        text-align: left;
-        position: relative;
-    }
-    .tool-card.active { border-color: #0ea5e9; box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.1); }
-    .tool-card.pending { opacity: 0.7; border-color: #e2e8f0; }
-    .tool-card:hover { transform: translateY(-5px); border-color: #0ea5e9; }
-    
-    .status-dot { width: 10px; height: 10px; background: #22c55e; border-radius: 50%; position: absolute; top: 15px; right: 15px; }
-    .badge-small { font-size: 0.7rem; background: #f1f5f9; padding: 3px 8px; border-radius: 5px; color: #64748b; font-weight: 600; }
-    .btn-text { font-size: 0.85rem; color: #0ea5e9; font-weight: 600; display: block; margin-top: 15px; }
-</style>
+        .tool-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: inherit;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .status-active { background: #dcfce7; color: #166534; }
+        .status-pending { background: #f1f5f9; color: #64748b; }
+
+        .tool-card h3 { margin: 0 0 10px 0; font-size: 1.25rem; }
+        .tool-card p { margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5; }
+        .action-text { margin-top: auto; padding-top: 20px; color: var(--accent-color); font-weight: 600; font-size: 0.9rem; }
+
+        .footer { margin-top: auto; padding-top: 60px; font-size: 0.85rem; color: #94a3b8; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="logo.png" alt="TekinLabs Logo" class="logo">
+        <h1>TekinLabs</h1>
+        <p class="subtitle">Geleceğin mikro araçları burada test ediliyor.</p>
+    </header>
+
+    <main class="tool-grid">
+        <a href="linkedin.html" class="tool-card">
+            <span class="status-badge status-active">Aktif</span>
+            <h3>🚀 LinkedIn Formatter</h3>
+            <p>Gönderilerinizi kalın ve eğik karakterlerle dikkat çekici hale getirin.</p>
+            <span class="action-text">Hemen Dene →</span>
+        </a>
+
+        <a href="timer.html" class="tool-card">
+            <span class="status-badge status-pending">Yakında</span>
+            <h3>⏳ Focus Timer</h3>
+            <p>Laboratuvar temalı Pomodoro sayacı ile odaklanma sürenizi yönetin.</p>
+            <span class="action-text">Geliştiriliyor...</span>
+        </a>
+
+        <a href="pdf-tools.html" class="tool-card">
+            <span class="status-badge status-pending">Yakında</span>
+            <h3>📄 PDF Tools</h3>
+            <p>Hızlı PDF birleştirme ve düzenleme araçları seti.</p>
+            <span class="action-text">Deney Aşamasında...</span>
+        </a>
+
+        <a href="team-map.html" class="tool-card">
+            <span class="status-badge status-pending">Yakında</span>
+            <h3>🗺️ Team Map</h3>
+            <p>Ekip koordinasyonu için interaktif ve gizli harita paneli.</p>
+            <span class="action-text">Planlanıyor...</span>
+        </a>
+    </main>
+
+    <footer class="footer">
+        © 2026 TekinLabs | Onur Tekin
+    </footer>
+
+</body>
+</html>
