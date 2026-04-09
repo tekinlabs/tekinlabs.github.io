@@ -27,14 +27,14 @@
 
         .header { text-align: center; margin-bottom: 50px; }
         .logo { width: 120px; margin-bottom: 20px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
-        h1 { margin: 0; font-size: 2rem; color: #0f172a; }
-        .subtitle { color: #64748b; margin-top: 10px; }
+        h1 { margin: 0; font-size: 2.2rem; color: #0f172a; font-weight: 600; }
+        .subtitle { color: #64748b; margin-top: 10px; font-weight: 300; }
 
         .tool-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            max-width: 1000px;
+            max-width: 1100px;
             width: 100%;
         }
 
@@ -45,7 +45,7 @@
             text-decoration: none;
             color: inherit;
             border: 2px solid transparent;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             display: flex;
             flex-direction: column;
@@ -53,7 +53,7 @@
         }
 
         .tool-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: var(--accent-color);
             box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
         }
@@ -62,21 +62,22 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             padding: 4px 10px;
             border-radius: 20px;
             font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .status-active { background: #dcfce7; color: #166534; }
         .status-pending { background: #f1f5f9; color: #64748b; }
 
-        .tool-card h3 { margin: 0 0 10px 0; font-size: 1.25rem; }
-        .tool-card p { margin: 0; color: #64748b; font-size: 0.95rem; line-height: 1.5; }
-        .action-text { margin-top: auto; padding-top: 20px; color: var(--accent-color); font-weight: 600; font-size: 0.9rem; }
+        .tool-card h3 { margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 600; }
+        .tool-card p { margin: 0; color: #64748b; font-size: 0.9rem; line-height: 1.5; }
+        .action-text { margin-top: auto; padding-top: 20px; color: var(--accent-color); font-weight: 600; font-size: 0.85rem; }
 
-        .footer { margin-top: auto; padding-top: 60px; font-size: 0.85rem; color: #94a3b8; }
+        .footer { margin-top: auto; padding-top: 60px; font-size: 0.85rem; color: #94a3b8; text-align: center; }
     </style>
 </head>
 <body>
@@ -84,7 +85,7 @@
     <header class="header">
         <img src="logo.png" alt="TekinLabs Logo" class="logo">
         <h1>TekinLabs</h1>
-        <p class="subtitle">Geleceğin mikro araçları burada test ediliyor.</p>
+        <p class="subtitle">Verimlilik Odaklı Mikro-Araçlar Laboratuvarı</p>
     </header>
 
     <main class="tool-grid">
@@ -109,16 +110,86 @@
             <span class="action-text">Deney Aşamasında...</span>
         </a>
 
-        <a href="team-map.html" class="tool-card">
+        <a href="timezone.html" class="tool-card">
             <span class="status-badge status-pending">Yakında</span>
-            <h3>🗺️ Team Map</h3>
-            <p>Ekip koordinasyonu için interaktif ve gizli harita paneli.</p>
-            <span class="action-text">Planlanıyor...</span>
+            <h3>🌍 TR-DE Time Zone</h3>
+            <p>Almanya ve Türkiye arasındaki saat farkını anlık takip edin.</p>
+            <span class="action-text">Beklemede...</span>
+        </a>
+
+        <a href="wheel.html" class="tool-card">
+            <span class="status-badge status-pending">Yakında</span>
+            <h3>🎡 Wheel of Fortune</h3>
+            <p>Kararsız kaldığınız anlar için interaktif karar çarkı.</p>
+            <span class="action-text">Beklemede...</span>
+        </a>
+
+        <a href="lofi-mixer.html" class="tool-card">
+            <span class="status-badge status-pending">Yakında</span>
+            <h3>🎧 Lo-Fi Mixer</h3>
+            <p>Çalışırken odaklanmanızı sağlayacak ortam sesleri.</p>
+            <span class="action-text">Beklemede...</span>
+        </a>
+
+        <a href="coloring.html" class="tool-card">
+            <span class="status-badge status-pending">Yakında</span>
+            <h3>🎨 AI Coloring Page</h3>
+            <p>Yapay zeka ile kişiselleştirilmiş boyama sayfaları üretin.</p>
+            <span class="action-text">Beklemede...</span>
+        </a>
+
+        <a href="quiz.html" class="tool-card">
+            <span class="status-badge status-pending">Yakında</span>
+            <h3>🧠 Quick Quiz</h3>
+            <p>Saniyeler içinde eğlenceli ve eğitici testler oluşturun.</p>
+            <span class="action-text">Beklemede...</span>
+        </a>
+
+        <a href="img-tools.html" class="tool-card">
+            <span class="status-badge status-pending">Yakında</span>
+            <h3>🖼️ Image Tools</h3>
+            <p>Format dönüştürme ve hızlı görsel boyutlandırma.</p>
+            <span class="action-text">Beklemede...</span>
+        </a>
+
+        <a href="json-tools.html" class="tool-card">
+            <span class="status-badge status-pending">Yakında</span>
+            <h3>💻 JSON Beautifier</h3>
+            <p>Karmaşık kod yapılarını okunabilir hale getirin.</p>
+            <span class="action-text">Beklemede...</span>
+        </a>
+
+        <a href="password.html" class="tool-card">
+            <span class="status-badge status-pending">Yakında</span>
+            <h3>🔑 Password Gen</h3>
+            <p>Üst düzey güvenlikli ve rastgele şifreler oluşturun.</p>
+            <span class="action-text">Beklemede...</span>
+        </a>
+
+        <a href="markdown.html" class="tool-card">
+            <span class="status-badge status-pending">Yakında</span>
+            <h3>📝 Markdown Preview</h3>
+            <p>README dosyalarınızı anlık olarak önizleyin.</p>
+            <span class="action-text">Beklemede...</span>
+        </a>
+
+        <a href="qr-gen.html" class="tool-card">
+            <span class="status-badge status-pending">Yakında</span>
+            <h3>📱 QR Generator</h3>
+            <p>Hızlı ve özelleştirilebilir QR kodları tasarlayın.</p>
+            <span class="action-text">Beklemede...</span>
+        </a>
+
+        <a href="converter.html" class="tool-card">
+            <span class="status-badge status-pending">Yakında</span>
+            <h3>📏 Unit Converter</h3>
+            <p>Teknik ve genel birimler arası hızlı dönüşüm.</p>
+            <span class="action-text">Beklemede...</span>
         </a>
     </main>
 
     <footer class="footer">
-        © 2026 TekinLabs | Onur Tekin
+        <p>© 2026 TekinLabs | Onur Tekin</p>
     </footer>
 
 </body>
